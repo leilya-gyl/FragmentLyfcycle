@@ -1,2 +1,3 @@
+include ':fragmentdynamic'
 include ':app'
 rootProject.name = "FragmentLyfcycle"

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinLay1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/add"
+            tools:ignore="UsingOnClickInXml" />
+        <Button
+            android:id="@+id/btnRemove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/remove"
+            tools:ignore="UsingOnClickInXml" />
+        <Button
+            android:id="@+id/btnReplace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/replace"
+            tools:ignore="UsingOnClickInXml" />
+        <CheckBox
+            android:id="@+id/chbStack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stack"/>
+
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/frgmCont"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+</LinearLayout>
