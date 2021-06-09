@@ -19,7 +19,7 @@ public class Fragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment1, null);
         Button btn = v.findViewById(R.id.btn);
-        btn.setOnClickListener(v1 -> Log.d(LOG_TAG, "Button click in Fragment1"));
+        btn.setOnClickListener(v1 -> ((Button)getActivity().findViewById(R.id.btnFind)).setText("Access from Fragment 1"));
         return v;
     }
 }

@@ -1,5 +1,6 @@
 package ru.startandroid.develop.fragmentactivity;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,22 @@ import androidx.annotation.Nullable;
 
 public class Fragment2 extends Fragment {
 
+    public interface onMyEventListener {
+        public void myEvent(String s);
+    }
+
+    onMyEventListener myEventListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try{
+            myEventListener = (onMyEventListener) activity;
+        } catch (ClassCastException e ){
+            throw new ClassCastException(activity.toString() + " must implemented onMyEventListener ");
+        }
+    }
+
     final String LOG_TAG = "myLogs";
 
     @Nullable
@@ -21,7 +38,7 @@ public class Fragment2 extends Fragment {
         View v = inflater.inflate(R.layout.fragment2, null);
 
         Button btn = v.findViewById(R.id.btn2);
-        btn.setOnClickListener(v1 -> Log.d(LOG_TAG, "Button click in Fragment2"));
+        btn.setOnClickListener(v1 -> myEventListener.myEvent("Test text to Fragment 1"));
         return v;
     }
 }
