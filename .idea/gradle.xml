@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/fragmentactivity" />
             <option value="$PROJECT_DIR$/fragmentdynamic" />
+            <option value="$PROJECT_DIR$/listfragmentexample" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
