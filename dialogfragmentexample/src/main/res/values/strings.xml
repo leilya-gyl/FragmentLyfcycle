@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DialogFragmentExample</string>
+    <string name="dialog1"> Dialog 1 </string>
+    <string name="dialog2"> Dialog 2 </string>
+    <string name="message_text">Text of your message</string>
+    <string name="yes"> Yes </string>
+    <string name="no"> No </string>
+    <string name="maybe"> Maybe </string>
+</resources>

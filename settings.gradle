@@ -1,3 +1,4 @@
+include ':dialogfragmentexample'
 include ':listfragmentexample'
 include ':actionbaritems'
 include ':fragmentactivity'
