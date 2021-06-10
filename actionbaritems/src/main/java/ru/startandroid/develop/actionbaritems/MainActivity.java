@@ -11,19 +11,33 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import com.google.android.material.tabs.TabLayout;
 
-public class MainActivity extends AppCompatActivity implements ActionBar.TabListener {
+public class MainActivity extends AppCompatActivity implements ActionBar.OnNavigationListener {
 
     final  String LOG_TAG = "myLogs";
+
+    String[] data = new String[]{"one", "two", "three", "four", "five"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Выпадающий список
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, data);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        actionBar.setListNavigationCallbacks(adapter, this);
+
+        /*// Табы
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
@@ -35,31 +49,23 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         tab = actionBar.newTab();
         tab.setText("tab2");
         tab.setTabListener(this);
-        actionBar.addTab(tab);
+        actionBar.addTab(tab);*/
 
-        //getSupportActionBar().setDisplayShowTitleEnabled(false); // убирает название с ActionBar
-        //getSupportActionBar().setDisplayShowHomeEnabled(true);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false); // убирает название с ActionBar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    /*@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }*/
-
-    @Override
-    public void onTabSelected(Tab tab, FragmentTransaction ft) {
-        Log.d(LOG_TAG, "selected tab: "+ tab.getText());
     }
 
     @Override
-    public void onTabUnselected(Tab tab, FragmentTransaction ft) {
-        Log.d(LOG_TAG, "unselected tab: "+ tab.getText());
-    }
-
-    @Override
-    public void onTabReselected(Tab tab, FragmentTransaction ft) {
-        Log.d(LOG_TAG, "reselected tab: "+ tab.getText());
+    public boolean onNavigationItemSelected(int itemPosition, long itemId) {
+        Log.d(LOG_TAG,"selected: position = " + itemPosition + ", id = "
+            + itemId + ", " + data[itemPosition]);
+        return false;
     }
 }
