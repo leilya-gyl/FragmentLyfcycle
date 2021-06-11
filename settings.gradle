@@ -1,3 +1,5 @@
+include ':actionmodeexample'
+include ':dynamicactionbar'
 include ':preferencefragmentexample'
 include ':dialogfragmentexample'
 include ':listfragmentexample'

@@ -25,7 +25,11 @@
             android:title="@string/screen1_title"/>
         <PreferenceScreen
             android:summary="@string/screen2_summary"
-            android:title="@string/screen2_title"/>
+            android:title="@string/screen2_title">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://www.developer.android.com"/>
+        </PreferenceScreen>
 
     </PreferenceCategory>
 

@@ -12,8 +12,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/actionbaritems" />
+            <option value="$PROJECT_DIR$/actionmodeexample" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/dialogfragmentexample" />
+            <option value="$PROJECT_DIR$/dynamicactionbar" />
             <option value="$PROJECT_DIR$/fragmentactivity" />
             <option value="$PROJECT_DIR$/fragmentdynamic" />
             <option value="$PROJECT_DIR$/listfragmentexample" />
