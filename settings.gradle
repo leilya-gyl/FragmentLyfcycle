@@ -1,3 +1,5 @@
+include ':myapplication'
+include ':supportlibraryexample'
 include ':actionmodeexample'
 include ':dynamicactionbar'
 include ':preferencefragmentexample'
